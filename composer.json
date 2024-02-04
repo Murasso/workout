@@ -49,10 +49,7 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ],
-        "vercel": [
-            "cd api && composer install && php artisan migrate --force"
-          ]
+        ]
     },
     "extra": {
         "laravel": {
