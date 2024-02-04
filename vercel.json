@@ -1,22 +1,20 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "api/index.php",
-            "use": "vercel-php@0.6.0"
-        },
-        {
-            "src": "public/**",
-            "use": "vercel-php@0.6.0"
-        }
-    ],
+    "framework": null,
+    "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.6.0" }
+    },
+    "outputDirectory": "public",
     "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/build/$1"
+        },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
     ],
-
     "env": {
         "APP_NAME": "Laravel Vercel",
         "APP_DEBUG": "false",
